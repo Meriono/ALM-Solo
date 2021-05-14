@@ -11,10 +11,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * Project: spring-docker-demo
  */
 public class MyMathCalcTest {
-    MyMathCalc math = new MyMathCalc();
+
 
     @Test
     public void testAddMethod(){
+        MyMathCalc math = new MyMathCalc();
         int expected = 5;
         int actual = math.add(2,3);
 
@@ -23,6 +24,7 @@ public class MyMathCalcTest {
 
     @Test
     public void testMultipyMethod(){
+        MyMathCalc math = new MyMathCalc();
         int expected = 6;
         int actual = math.multiply(2,3);
 
@@ -31,6 +33,7 @@ public class MyMathCalcTest {
 
     @Test
     public void testDivideMethod(){
+        MyMathCalc math = new MyMathCalc();
         int expected = 5;
         double actual = math.divide(10,2);
 
@@ -39,6 +42,7 @@ public class MyMathCalcTest {
 
     @Test
     public void testDivideThrowsZero(){
+        MyMathCalc math = new MyMathCalc();
         assertThrows(ArithmeticException.class,() -> math.divide(2,0));
     }
 }
