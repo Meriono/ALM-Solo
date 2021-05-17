@@ -1,9 +1,9 @@
 package com.example.springdocker.service;
 
 import com.example.springdocker.model.Food;
-import com.example.springdocker.model.Kompis;
+import com.example.springdocker.model.Friend;
 import com.example.springdocker.repository.FoodRepository;
-import com.example.springdocker.repository.KompisRepository;
+import com.example.springdocker.repository.FriendRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,24 +12,24 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
-public class KompisService {
-    private final KompisRepository repository;
+public class FriendService {
+    private final FriendRepository repository;
 
-    public List<Kompis> getKompisar() {
+    public List<Friend> getFriends() {
         return repository.findAll();
     }
 
-    public void saveNewKompis(Kompis kompis) {
-        repository.save(kompis);
+    public void saveNewFriend(Friend friend) {
+        repository.save(friend);
     }
 
-    public List<String> getNiceKompisar() {
+    public List<String> getLikeableFriends() {
         // hämtar alla Foods som vi kan laga
-        List<Kompis> niceKompis = repository.findIfKompisIsNice(true);
+        List<Friend> likeableFriends = repository.findFriendByLikeable(true);
 
         // returnerar endast Food namnen i en lista
-        return niceKompis.stream()
-                .map(kompis -> kompis.getName())
+        return likeableFriends.stream()
+                .map(friend -> friend.getName())
                 .collect(Collectors.toList());
     }
 }

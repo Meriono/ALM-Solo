@@ -7,9 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Kompis {
+public class Friend {
     String id;
     String name;
-    boolean delicious;
-    boolean isNice;
+    boolean likeable;
 }
