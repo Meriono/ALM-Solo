@@ -17,6 +17,11 @@ import java.util.List;
 public class FriendController {
     private final FriendService service;
 
+    @GetMapping("/")
+    public String start() {
+        return "hello";
+    }
+
     @GetMapping("/friends")
     public List<Friend> getFoods() {
         return service.getFriends();
