@@ -1,0 +1,28 @@
+name: Greeter
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1, greet
+        run: echo Hello team!
+
+      - name: Step 2
+        run: echo Bye bye
+
+
+#  greet-again:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Step 1, greet
+#        run: echo Hello team!
+#
+#      - name: Step 2
+#        run: echo Bye bye
+#
